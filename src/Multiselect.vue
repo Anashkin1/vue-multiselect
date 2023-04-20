@@ -56,6 +56,7 @@
           :style="inputStyle"
           :value="search"
           :disabled="disabled"
+          :required="required"
           :tabindex="tabindex"
           @input="updateSearch($event.target.value)"
           @focus.prevent="activate()"
@@ -170,6 +171,13 @@ export default {
     name: {
       type: String,
       default: ''
+    },
+    /**
+     * required attribute for mandatory filling of the field
+     */
+    required: {
+      type: Boolean,
+      default: false
     },
     /**
      * String to show when pointing to an option
